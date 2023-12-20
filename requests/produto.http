@@ -1,0 +1,91 @@
+//Localizar todos produtos
+GET http://localhost:8080/api/produto
+
+###
+
+//Localizar produto por ID
+GET http://localhost:8080/api/produto/1
+
+###
+
+//Produtos Nº1
+POST http://localhost:8080/api/produto
+Content-Type: application/json
+
+{
+    "produtoNome": "Geladeira Brastemp Bivolt",
+    "produtoQuantidade": 5,
+    "produtoValor": 2499.90,
+    "produtoCategoriaId": {"categoriaId":1}
+}
+
+###
+
+
+//Produtos Nº2
+POST http://localhost:8080/api/produto
+Content-Type: application/json
+
+{
+    "produtoNome": "Tubulacao PEAD 20mm 100 Metros",
+    "produtoQuantidade": 10,
+    "produtoValor": 499.90,
+    "produtoCategoriaId": {"categoriaId":2}
+}
+
+###
+
+//Produtos Nº3
+POST http://localhost:8080/api/produto
+Content-Type: application/json
+
+{
+    "produtoNome": "Sofa Retratil 1,5m Tecido Cama",
+    "produtoQuantidade": 3,
+    "produtoValor": 889.90,
+    "produtoCategoriaId": {"categoriaId":3}
+}
+
+###
+
+//Produtos Nº4
+POST http://localhost:8080/api/produto
+Content-Type: application/json
+
+{
+    "produtoNome": "Ar Condicionado 7500 BTU 210 Volts",
+    "produtoQuantidade": 10,
+    "produtoValor": 1899.90,
+    "produtoCategoriaId": {"categoriaId":1}
+}
+
+###
+
+//Produtos Nº5
+POST http://localhost:8080/api/produto
+Content-Type: application/json
+
+{
+    "produtoNome": "Tv 500 Polegadas",
+    "produtoQuantidade": 1,
+    "produtoValor": 1200000.90,
+    "produtoCategoriaId": {"categoriaId":1}
+}
+
+###
+
+//Atualizar Produtos Nº2
+PUT http://localhost:8080/api/produto/2
+Content-Type: application/json
+
+{
+    "produtoNome": "Tubulacao PEAD 20mm 100 Metros",
+    "produtoQuantidade": 10,
+    "produtoValor": 449.00
+}
+
+###
+
+//Excluir Produtos Nº2
+DELETE http://localhost:8080/api/produto/2
+

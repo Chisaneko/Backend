@@ -12,43 +12,38 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.unifaa.ecommerce.model.Produto;
-import edu.unifaa.ecommerce.service.ProdutoService;
+import edu.unifaa.ecommerce.model.Endereco;
+import edu.unifaa.ecommerce.service.EnderecoService;
 import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
-@RequestMapping("/api/produto")
+@RequestMapping("/api/endereco")
 @CrossOrigin("*")
 
-public class ProdutoController {
+public class EnderecoController {
 
     @Autowired
-    private ProdutoService produtoService;
+    private EnderecoService enderecoService;
 
     @GetMapping
-    public List<Produto> obterTodosProdutos(){
-        return  produtoService.obterTodosProdutos();
-    }
-
-    @GetMapping("/{id}")
-    public Produto obterPorId(@PathVariable Long id){
-        return produtoService.obterProdutoPorId(id);
+    public List<Endereco> obterTodosEnderecos(){
+        return  enderecoService.obterTodosEnderecos();
     }
 
     @PostMapping
-    public Produto adcionarProduto(@RequestBody Produto produto){
-        return produtoService.adicionarProduto(produto);
+    public Endereco adcionarEndereco(@RequestBody Endereco endereco){
+        return enderecoService.adicionarEndereco(endereco);
     }
 
     @PutMapping("/{id}")
-    public Produto atualizarProduto(@PathVariable Long id,@RequestBody Produto produto){
-        return produtoService.atualizarProduto(id, produto);
+    public Endereco atualizarEndereco(@PathVariable Long id,@RequestBody Endereco endereco){
+        return enderecoService.atualizarEndereco(id, endereco);
         
     }
     
     @DeleteMapping("/{id}")
-    public void deletarProduto(@PathVariable Long id){
-        produtoService.deletarProduto(id);
+    public void deletarEndereco(@PathVariable Long id){
+        enderecoService.deletarEndereco(id);
     }
 }

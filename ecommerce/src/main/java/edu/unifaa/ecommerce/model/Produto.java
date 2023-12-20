@@ -1,11 +1,14 @@
 package edu.unifaa.ecommerce.model;
 
-import edu.unifaa.ecommerce.model.myenum.EDepartamento;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Produto {
@@ -23,8 +26,10 @@ public class Produto {
     @Column(nullable = false)
     private double produtoValor;
 
-    @Column(nullable = false)
-    private EDepartamento produtoDepartamento;
+    @ManyToOne
+    @JoinColumn(name = "categoriaProdutoId")
+    @JsonBackReference
+    private Categoria produtoCategoriaId;
 
     //Getter e Setters
     //=======================================================================================================================================
@@ -61,13 +66,13 @@ public class Produto {
         this.produtoValor = produtoValor;
     }
 
-    public EDepartamento getProdutoDepartamento() {
-        return produtoDepartamento;
+    public Categoria getProdutoCategoriaId() {
+        return produtoCategoriaId;
     }
 
-    public void setProdutoDepartamento(EDepartamento produtoDepartamento) {
-        this.produtoDepartamento = produtoDepartamento;
+    public void setProdutoCategoriaId(Categoria produtoCategoriaId) {
+        this.produtoCategoriaId = produtoCategoriaId;
     }
 
-
+ 
 }

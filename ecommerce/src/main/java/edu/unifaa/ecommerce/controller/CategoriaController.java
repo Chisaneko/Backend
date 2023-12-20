@@ -12,43 +12,43 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.unifaa.ecommerce.model.Produto;
-import edu.unifaa.ecommerce.service.ProdutoService;
+import edu.unifaa.ecommerce.model.Categoria;
+import edu.unifaa.ecommerce.service.CategoriaService;
 import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
-@RequestMapping("/api/produto")
+@RequestMapping("/api/categoria")
 @CrossOrigin("*")
 
-public class ProdutoController {
+public class CategoriaController {
 
     @Autowired
-    private ProdutoService produtoService;
+    private CategoriaService categoriaService;
 
     @GetMapping
-    public List<Produto> obterTodosProdutos(){
-        return  produtoService.obterTodosProdutos();
+    public List<Categoria> obterTodosCategorias(){
+        return  categoriaService.obterTodosCategorias();
     }
 
     @GetMapping("/{id}")
-    public Produto obterPorId(@PathVariable Long id){
-        return produtoService.obterProdutoPorId(id);
+    public Categoria obterPorId(@PathVariable Long id){
+        return categoriaService.obterCategoriaPorId(id);
     }
 
     @PostMapping
-    public Produto adcionarProduto(@RequestBody Produto produto){
-        return produtoService.adicionarProduto(produto);
+    public Categoria adcionarCategoria(@RequestBody Categoria categoria){
+        return categoriaService.adicionarCategoria(categoria);
     }
 
     @PutMapping("/{id}")
-    public Produto atualizarProduto(@PathVariable Long id,@RequestBody Produto produto){
-        return produtoService.atualizarProduto(id, produto);
+    public Categoria atualizarCategoria(@PathVariable Long id,@RequestBody Categoria categoria){
+        return categoriaService.atualizarCategoria(id, categoria);
         
     }
     
     @DeleteMapping("/{id}")
-    public void deletarProduto(@PathVariable Long id){
-        produtoService.deletarProduto(id);
+    public void deletarCategoria(@PathVariable Long id){
+        categoriaService.deletarCategoria(id);
     }
 }

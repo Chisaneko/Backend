@@ -13,9 +13,20 @@ public class ClienteService {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    public List<Cliente> obterTodos(){
+    public List<Cliente> obterTodosClientes(){
         return clienteRepository.findAll();
     }
 
+    public Cliente adicionarCliente(Cliente cliente){
+        return clienteRepository.save(cliente);
+    }
+
+    public Cliente atualizarCliente(Long idCliente,Cliente cliente){
+        cliente.setClienteId(idCliente);
+        return clienteRepository.save(cliente);
+    }
     
+    public void deletarCliente(Long idCliente){
+        clienteRepository.deleteById(idCliente);
+    }
 }

@@ -12,43 +12,38 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.unifaa.ecommerce.model.Produto;
-import edu.unifaa.ecommerce.service.ProdutoService;
+import edu.unifaa.ecommerce.model.Cliente;
+import edu.unifaa.ecommerce.service.ClienteService;
 import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
-@RequestMapping("/api/produto")
+@RequestMapping("/api/cliente")
 @CrossOrigin("*")
 
-public class ProdutoController {
+public class ClienteController {
 
     @Autowired
-    private ProdutoService produtoService;
+    private ClienteService clienteService;
 
     @GetMapping
-    public List<Produto> obterTodosProdutos(){
-        return  produtoService.obterTodosProdutos();
-    }
-
-    @GetMapping("/{id}")
-    public Produto obterPorId(@PathVariable Long id){
-        return produtoService.obterProdutoPorId(id);
+    public List<Cliente> obterTodosClientes(){
+        return  clienteService.obterTodosClientes();
     }
 
     @PostMapping
-    public Produto adcionarProduto(@RequestBody Produto produto){
-        return produtoService.adicionarProduto(produto);
+    public Cliente adcionarCliente(@RequestBody Cliente cliente){
+        return clienteService.adicionarCliente(cliente);
     }
 
     @PutMapping("/{id}")
-    public Produto atualizarProduto(@PathVariable Long id,@RequestBody Produto produto){
-        return produtoService.atualizarProduto(id, produto);
+    public Cliente atualizarCliente(@PathVariable Long id,@RequestBody Cliente cliente){
+        return clienteService.atualizarCliente(id, cliente);
         
     }
     
     @DeleteMapping("/{id}")
-    public void deletarProduto(@PathVariable Long id){
-        produtoService.deletarProduto(id);
+    public void deletarCliente(@PathVariable Long id){
+        clienteService.deletarCliente(id);
     }
 }

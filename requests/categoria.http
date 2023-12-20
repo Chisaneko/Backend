@@ -1,0 +1,68 @@
+//Localizar todas categorias
+
+GET http://localhost:8080/api/categoria
+
+###
+
+//Localizar todas categorias
+
+GET http://localhost:8080/api/categoria/1
+
+###
+
+//Categoria Nº1
+POST http://localhost:8080/api/categoria
+Content-Type: application/json
+
+{ 
+    "categoriaNome": "Eletronico"
+}
+
+###
+
+//Categoria Nº2
+POST http://localhost:8080/api/categoria
+Content-Type: application/json
+
+{
+    "categoriaNome": "Hidraulico"
+}
+
+
+###
+
+//Categoria Nº3
+POST http://localhost:8080/api/categoria
+Content-Type: application/json
+
+{
+    "categoriaNome": "Lazer"
+}
+
+
+###
+
+//Categoria Nº4
+POST http://localhost:8080/api/categoria
+Content-Type: application/json
+
+{
+    "categoriaNome": "Esporte"
+}
+
+
+###
+
+//Atualizar Categoria Nº4
+PUT http://localhost:8080/api/categoria/4
+Content-Type: application/json
+
+{
+    "categoriaNome": "Esportivo"
+}
+
+###
+
+//Excluir Categoria Nº2
+DELETE http://localhost:8080/api/categoria/4
+

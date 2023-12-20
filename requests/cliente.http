@@ -1,2 +1,53 @@
-GET HTTP://localhost:8080/api/cliente/
+//Localizar todos clientes
+GET http://localhost:8080/api/cliente
+
+###
+
+//Cliente Nº1
+POST http://localhost:8080/api/cliente
+Content-Type: application/json
+
+{
+
+    "clientePrimeiroNome": "David",
+    "clienteSegundoNome": "Gouvea",
+    "clienteCpf": "16484430799",
+    "clienteEmail": "david4sayt@gmail.com",
+    "clienteSenha": "shnitzel.rada.rada"
+}
+
+###
+
+//Cliente Nº2
+POST http://localhost:8080/api/cliente
+Content-Type: application/json
+
+{
+
+    "clientePrimeiroNome": "Lambiscreuza",
+    "clienteSegundoNome": "Fagundes",
+    "clienteCpf": "11122233344",
+    "clienteEmail": "lambiscreuzaf@coldmail.com",
+    "clienteSenha": "mung.daal"
+}
+
+###
+
+//Atualizar Cliente Nº2
+PUT http://localhost:8080/api/cliente/2
+Content-Type: application/json
+
+{
+
+    "clientePrimeiroNome": "Denisvalda",
+    "clienteSegundoNome": "Carlota",
+    "clienteCpf": "55566677788",
+    "clienteEmail": "DenisCar@warmmail.com",
+    "clienteSenha": "panini"
+}
+
+###
+
+//Excluir Cliente Nº2
+DELETE http://localhost:8080/api/cliente/2
 

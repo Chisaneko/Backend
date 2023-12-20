@@ -1,0 +1,75 @@
+//Localizar todos enderecos
+GET http://localhost:8080/api/endereco
+
+###
+
+//Endereco Nº1
+POST http://localhost:8080/api/endereco
+Content-Type: application/json
+
+{
+    "enderecoCliente": {"clienteId":1},
+    "enderecoCep": "25946130",
+    "enderecoEstado": "RJ",
+    "enderecoCidade": "Guapimirim",
+    "enderecoBairro": "Centro",
+    "enderecoRua": "Rua_Mario_Alves",
+    "enderecoNum": 125,
+    "enderecoComplemento": null
+}
+
+###
+
+//Endereco Nº2
+POST http://localhost:8080/api/endereco
+Content-Type: application/json
+
+{
+    "enderecoCliente": {"clienteId":1},
+    "enderecoCep": "25945316",
+    "enderecoEstado": "RJ",
+    "enderecoCidade": "Guapimirim",
+    "enderecoBairro": "Centro",
+    "enderecoRua": "Av_Dedo_de_Deus",
+    "enderecoNum": 719,
+    "enderecoComplemento": "Loja 1"
+}
+
+###
+
+//Endereco Nº3
+POST http://localhost:8080/api/endereco
+Content-Type: application/json
+
+{
+    "enderecoCliente": {"clienteId":2},
+    "enderecoCep": "25945318",
+    "enderecoEstado": "RJ",
+    "enderecoCidade": "Guapimirim",
+    "enderecoBairro": "Jardim_Guapimirim",
+    "enderecoRua": "Anany_Charles_Vieira",
+    "enderecoNum": 0,
+    "enderecoComplemento": "Lote 14 Quadra D"
+}
+
+###
+
+//Atualizar Endereco Nº2
+PUT http://localhost:8080/api/endereco/2
+Content-Type: application/json
+
+{
+    "enderecoCep": "25945316",
+    "enderecoEstado": "RJ",
+    "enderecoCidade": "Guapimirim",
+    "enderecoBairro": "Centro",
+    "enderecoRua": "Av_Dedo_de_Deus",
+    "enderecoNum": 719,
+    "enderecoComplemento": "Loja 1 - Fundos"
+}
+
+###
+
+//Excluir Endereco Nº2
+DELETE http://localhost:8080/api/endereco/3
+
